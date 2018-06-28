@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cornerRadiusCard">5dp</dimen>
+    <dimen name="title_text_size">18sp</dimen>
+    <dimen name="entry_text_size">16sp</dimen>
+    <dimen name="margin_bottom">15dp</dimen>
+</resources>

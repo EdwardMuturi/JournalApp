@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_journal_entries"
+    tools:context=".view.JournalEntriesActivity">
+
+   <android.support.v7.widget.CardView
+       android:layout_width="0dp"
+       app:cardCornerRadius="@dimen/cornerRadiusCard"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintLeft_toLeftOf="parent"
+       app:layout_constraintRight_toRightOf="parent"
+       android:layout_marginBottom="@dimen/margin_bottom"
+       android:layout_height="wrap_content">
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/prompt_title_goes_here"
+          android:id="@+id/tv_entry_title"
+          android:textSize="@dimen/title_text_size"/>
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/tv_entry_body"
+           android:text="@string/prompt_body_goes_here"
+           android:textSize="@dimen/entry_text_size"/>
+   </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>
