@@ -9,7 +9,7 @@
     </style>
 
     <!--[START] Custom Theme-->
-    <style name="mainTheme" parent="Theme.AppCompat.Light">
+    <style name="mainTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorCyanLight</item>
         <item name="colorPrimaryDark">@color/colorCyanDark</item>
         <item name="colorAccent">@color/colorPinkDark</item>

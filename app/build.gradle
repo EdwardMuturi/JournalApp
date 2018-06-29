@@ -17,7 +17,7 @@ android {
         }
     }
 }
-ext{
+ext {
     supportLibVersion = '27.1.1'
 }
 
