@@ -4,4 +4,9 @@
     <string name="prompt_title_goes_here">Title Goes Here</string>
     <string name="prompt_body_goes_here">Body Goes Here</string>
     <string name="title_new_entry">New Entry</string>
+    <string name="text_done">Done</string>
+    <string name="text_save">Save</string>
+    <string name="loading">Loading...</string>
+    <string name="text_sign_out">Sign Out</string>
+    <string name="prompt_sign_in_failed">Sign in Failed</string>
 </resources>
