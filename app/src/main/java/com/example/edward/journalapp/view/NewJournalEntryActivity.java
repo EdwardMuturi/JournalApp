@@ -3,6 +3,7 @@ package com.example.edward.journalapp.view;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +20,7 @@ public class NewJournalEntryActivity extends AppCompatActivity implements View.O
     private Button doneButton;
     private EditText etTitle;
     private EditText etBody;
+    private int Id;
 
     private Box<JournalEntity> journalEntityBox;
     private Query<JournalEntity> journalEntityQuery;
@@ -51,12 +53,14 @@ public class NewJournalEntryActivity extends AppCompatActivity implements View.O
         if (bundle != null){
             String passedTitle= bundle.getString("Title");
             String passedBody= bundle.getString("Body");
+            Id = bundle.getInt("ID");
 
             etTitle.setText(passedTitle);
             etBody.setText(passedBody);
             doneButton.setText(R.string.text_save);
 
             addJournal();
+            Log.i("Update", String.valueOf(Id));
 
         } //else
             //clearFields(); //[END] set fields for update
@@ -66,8 +70,19 @@ public class NewJournalEntryActivity extends AppCompatActivity implements View.O
     public void onClick(View view) {
         int id= view.getId();
         if (id == R.id.btn_done){
-            Toast.makeText(getApplicationContext(), "Note Added", Toast.LENGTH_LONG).show();
-            addJournal();
+
+//            String textOnDoneButton= doneButton.getText().toString();
+
+//            if (textOnDoneButton == getString(R.string.text_done)) {
+                addJournal();
+                Toast.makeText(getApplicationContext(), "Note Added", Toast.LENGTH_LONG).show();
+
+//            } else if (textOnDoneButton == getString(R.string.text_save)){
+//                updateJournal(Id);
+//                Toast.makeText(getApplicationContext(), "Note Updated", Toast.LENGTH_LONG).show();
+//            }
+//            else
+//                Toast.makeText(this, "Error with update/ add", Toast.LENGTH_LONG).show();
 
             Intent intent= new Intent(this, JournalEntriesActivity.class);
             startActivity(intent);
@@ -79,6 +94,14 @@ public class NewJournalEntryActivity extends AppCompatActivity implements View.O
         etBody.setText("");
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        addJournal();
+    }
+
+
     private void addJournal(){
         String newEntryTitle= etTitle.getText().toString();
         String newEntryBody= etBody.getText().toString();
@@ -89,4 +112,15 @@ public class NewJournalEntryActivity extends AppCompatActivity implements View.O
 
         journalEntityBox.put(journalEntity);
     }
+
+//    private void updateJournal(int Id){
+//        String newEntryTitle= etTitle.getText().toString();
+//        String newEntryBody= etBody.getText().toString();
+//
+//        JournalEntity journalEntity= journalEntityBox.get(Id);
+//        journalEntity.setTitle(newEntryTitle);
+//        journalEntity.setMessage(newEntryBody);
+//
+//        journalEntityBox.put(journalEntity);
+//    }
 }

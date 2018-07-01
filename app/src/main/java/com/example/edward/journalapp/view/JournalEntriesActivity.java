@@ -74,7 +74,7 @@ public class JournalEntriesActivity extends AppCompatActivity implements Journal
         firebaseAuth= FirebaseAuth.getInstance();
 
 
-//        journalEntriesAdapter.notifyDataSetChanged();
+        journalEntriesAdapter.notifyDataSetChanged();
 
     }
 
@@ -127,6 +127,8 @@ public class JournalEntriesActivity extends AppCompatActivity implements Journal
         Bundle extras= new Bundle();
         extras.putString("Title", entity.getTitle());
         extras.putString("Body", entity.getMessage());
+        extras.putInt("ID", position);
+        Log.d("Update", String.valueOf(position));
 
         editIntent.putExtras(extras);
         startActivity(editIntent);
@@ -142,4 +144,5 @@ public class JournalEntriesActivity extends AppCompatActivity implements Journal
 
         journalEntriesAdapter.notifyDataSetChanged();
     }
+
 }
