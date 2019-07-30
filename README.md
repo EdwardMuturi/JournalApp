@@ -7,6 +7,7 @@ Features
 * View all entries to your diary.
 * View the contents of a diary entry.
 * Add and modify an entry.
+* Delete Entry
 
 
 
